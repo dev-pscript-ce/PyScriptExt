@@ -1,0 +1,33 @@
+{
+  "workbench.startupEditor": "none",
+  "terminal.integrated.initialHint": false,
+  "explorer.confirmDelete": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dark Modern",
+  "editor.fontSize": 20,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "code-runner.runInTerminal": true,
+  "liveServer.settings.port": 5501,
+  // "editor.semanticTokenColorCustomizations": {
+  //   "enabled": true,
+  //   "rules": {
+  //     "class": {
+  //       "foreground": "#5865d2"
+  //     },
+  //     "function": {
+  //       "foreground": "#ff7b00bb"
+  //     },
+  //     "method": {
+  //       "foreground": "#00eeff"
+  //     },
+  //     "variable": {
+  //       "foreground": "#f06292"
+  //     },
+  //     "parameter": {
+  //       "foreground": "#ba68c8"
+  //     }
+  //   }
+  // }
+}

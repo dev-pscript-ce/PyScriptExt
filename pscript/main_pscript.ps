@@ -1,0 +1,86 @@
+printl("Running sub_dsl.ps","M")
+printl("-"*100,"A")
+//--------------------------------------------------------------//
+class Animal{
+
+    func speak(this):
+        printl("Animal","rR")
+}
+class Dog(Animal){
+
+    func speak(this):
+
+        super().speak()
+
+        printl("Dog","rB")
+}
+d = Dog()
+
+d.speak() 
+
+// --------------------------------------------------//
+// Không gọi super()
+
+class Dog(Animal){
+
+    func speak(this):
+        printl("Dog","C")
+}
+
+Dog().speak()
+
+
+class Animal{
+
+    func __init__(this):
+        printl("Animal init","G")
+}
+
+class Dog(Animal){
+
+    func __init__(this):
+        super().__init__()
+        printl("Dog init","rY")
+}
+
+Dog() 
+
+//----------------------------------------------------------//
+# Constructor kế thừa
+
+class Animal{
+
+    func __init__(this):
+        this.name = "Animal"
+
+    func show(this):
+        printl(this.name,"hR")
+}
+
+class Dog(Animal){
+}
+
+Dog().show()
+
+//----------------------------------------------------------//
+// Ghi đè phương thức:
+
+class Animal{
+
+    func sound(this):
+        printl("???","rPu")
+}
+
+class Dog(Animal){
+
+    func sound(this):
+        printl("Woof","h8")
+}
+
+/* Animal().sound()
+Dog().sound() */
+
+//----------------------------------------------------------//
+a = 10
+b = 2
+print.info(a/b)

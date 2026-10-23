@@ -1,0 +1,8 @@
+.vscode/
+*.vsix
+update_vsix.ps1
+my_comment.md
+providers_legacy/
+api.js
+utils/
+theme.ps1

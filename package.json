@@ -1,0 +1,84 @@
+{
+  "name": "pyscr",
+  "displayName": "Pscript Language",
+  "publisher": "pyscriptselfdev",
+  "description": "Pscript language support for Visual Studio Code",
+  "version": "0.1.1",
+  "icon": "./images/ps.png",
+  "main": "./extension.js",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "psc",
+    "pys",
+    "pjs",
+    "pyjs",
+    "pyscript",
+    "Pscript",
+    "python_script",
+    "PythonScript"
+
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "ps",
+        "aliases": [
+          "Pscript"
+        ],
+        "extensions": [
+          ".ps"
+        ],
+        "icon": {
+          "light": "./images/ps.png",
+          "dark": "./images/ps.png"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ps",
+        "scopeName": "source.ps",
+        "path": "./syntaxes/ps.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "PS Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark_pscript.json"
+      }
+    ],
+
+    "commands": [
+      {
+        "command": "ps.runFile",
+        "title": "RunDemoPs"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "ps.runFile",
+          "when": "resourceLangId == ps",
+          "group": "navigation"
+        }
+      ]
+    },
+    "snippets": [
+      {
+        "language": "ps",
+        "path": "./snippets/ps.code-snippets"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:ps",
+    "onCommand:ps.runFile"
+  ]
+}

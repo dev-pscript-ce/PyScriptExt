@@ -1,0 +1,158 @@
+{
+  "Function{": {
+    "prefix": "func(){",
+    "body": ["func ${1:functionName}(${2:args}){\n\t${3}", "}${0}"],
+    "description": "Create a function",
+  },
+  "Function:": {
+    "prefix": "func():",
+    "body": ["func ${1:functionName}(${2:args}):\n\t${3}", "${0}"],
+    "description": "Create a function",
+  },
+
+  "Class(){": {
+    "prefix": "class(){",
+    "body": ["class ${1:ClassName}(${2:args}) {", "\t${4}", "}${0}"],
+    "description": "Create a PyJs class",
+  },
+  "Class():": {
+    "prefix": "class():",
+    "body": ["class ${1:ClassName}(${2:args}):\n\t${3}", "${0}"],
+    "description": "Create a function",
+  },
+  "Class:": {
+    "prefix": "class:",
+    "body": ["class ${1:ClassName}:\n\t${3}", "${0}"],
+    "description": "Create a class",
+  },
+  "Class{": {
+    "prefix": "class{",
+    "body": ["class ${1:ClassName}:\n\t${3}", "${0}"],
+    "description": "Create a class",
+  },
+  "If": {
+    "prefix": "if",
+    "body": ["if ${1:condition}:", "\t${0}"],
+    "description": "Create an if statement",
+  },
+  "If Else": {
+    "prefix": "ife",
+    "body": ["if ${1:condition}:", " ${2}", "else", " ${0}"],
+    "description": "Create an if-else statement",
+  },
+  "If Else If": {
+    "prefix": "ifel",
+    "body": [
+      "if ${1:condition}:",
+      " ${2}",
+      "elif ${3:condition}:",
+      " ${4}",
+      "else:",
+      " ${0}",
+    ],
+    "description": "Create an if-elif-else statement",
+  },
+  "While": {
+    "prefix": "while",
+    "body": ["while ${1:condition}", " ${0}"],
+    "description": "Create a while loop",
+  },
+  "For": {
+    "prefix": "for",
+    "body": ["for ${1:item} in ${2:items}", " ${0}"],
+    "description": "Create a for loop",
+  },
+  "Import": {
+    "prefix": "import",
+    "body": ["import ${0:module}"],
+    "description": "Import a module",
+  },
+  "Import As": {
+    "prefix": "impas",
+    "body": ["import ${1:module} as ${0:alias}"],
+    "description": "Import a module with an alias",
+  },
+  
+  "print": {
+    "prefix": "pt",
+    "body": ["print${0:}"],
+    "description": "print *args",
+  },
+  "print.R": {
+    "prefix": "print-R",
+    "body": ["print.R(${0:})"],
+    "description": "print *args",
+  },
+  "print.B": {
+    "prefix": "print-B",
+    "body": ["print.B(${0:})"],
+    "description": "print *args",
+  },
+  "print.C": {
+    "prefix": "print-C",
+    "body": ["print.C(${0:})"],
+    "description": "print *args",
+  },
+  "print.G": {
+    "prefix": "print-G",
+    "body": ["print.G(${0:})"],
+    "description": "print *args",
+  },
+  "print.Y": {
+    "prefix": "print-Y",
+    "body": ["print.Y(${0:})"],
+    "description": "print *args",
+  },
+  "print.info()": {
+    "prefix": "print-info",
+    "body": ["print.info(${0:})"],
+    "description": "print *args",
+  },
+  "print.warn()": {
+    "prefix": "print-warn",
+    "body": ["print.warn(${0:})"],
+    "description": "print *args",
+  },
+  "print.error()": {
+    "prefix": "print-error",
+    "body": ["print.error(${0:})"],
+    "description": "print *args",
+  },
+  "print.logt()": {
+    "prefix": "print-logt",
+    "body": ["print.logt(${0:})"],
+    "description": "print *args",
+  },
+  
+  "Write": {
+    "prefix": "Write",
+    "body": ["Write(${0:text})"],
+    "description": "Write text",
+  },
+  "Press": {
+    "prefix": "press",
+    "body": ["Press(${0:key})"],
+    "description": "Press a keyboard key",
+  },
+  "Hot Key": {
+    "prefix": "hotkey",
+    "body": ["Hot_Key(${0:keys})"],
+    "description": "Press a keyboard shortcut",
+  },
+  "Return": {
+    "prefix": "return",
+    "body": ["return ${0:value}"],
+    "description": "Return a value",
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": ["try", " ${1}", "catch ${2:error}", " ${0}"],
+    "description": "Create a try-catch block",
+  },
+  "From": {
+    "prefix": "from",
+    "body": ["from ${1:module_name} import ${2:method_name}${3:}"],
+    "description": "Create a try-catch block",
+  },
+
+}

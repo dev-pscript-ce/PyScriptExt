@@ -1,0 +1,44 @@
+
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+.py311/
+
+# =========================
+# PyInstaller build
+# =========================
+*build/
+# =========================
+# VS Code extension packages
+# =========================
+debug_ocr.png
+my_comment.md
+
+# Pscript
+pscript/test_pscript.ps
+
+# =========================
+# Logs and temporary files
+# =========================
+*.log
+*.tmp
+*.bak
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Editor and OS
+# =========================
+.DS_Store
+Thumbs.db

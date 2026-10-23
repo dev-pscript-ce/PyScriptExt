@@ -1,0 +1,251 @@
+{
+  "scopeName": "source.ps",
+  "name": "Pscript",
+
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#imports" },
+    { "include": "#builtins" },
+    { "include": "#keywords" },
+    { "include": "#constants" },
+    { "include": "#operators" },
+    { "include": "#members" }
+  ],
+
+  "repository": {
+
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.block.ps",
+
+          "patterns": [
+            {
+              "match": "\\b(TODO|FIXME|NOTE|BUG)\\b",
+              "name": "keyword.other.todo.ps"
+            }
+          ]
+        },
+
+        {
+          "match": "#.*$",
+          "name": "comment.line.hash.ps"
+        },
+
+        {
+          "match": "//.*$",
+          "name": "comment.line.double-slash.ps"
+        }
+      ]
+    },
+
+
+    "strings": {
+      "patterns": [
+
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.ps",
+
+          "patterns": [
+
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.ps"
+            },
+
+            {
+              "match": "\\$",
+              "name": "storage.type.ps"
+            },
+
+            {
+              "begin": "\\{",
+
+              "beginCaptures": {
+                "0": {
+                  "name": "keyword.control.ps"
+                }
+              },
+
+              "end": "\\}",
+
+              "endCaptures": {
+                "0": {
+                  "name": "keyword.control.ps"
+                }
+              },
+
+              "name": "meta.interpolation.ps",
+
+              "patterns": [
+                {
+                  "match": "[A-Za-z_][A-Za-z0-9_]*",
+                  "name": "variable.other.interpolation.ps"
+                }
+              ]
+            }
+          ]
+        },
+
+
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.ps",
+
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.ps"
+            }
+          ]
+        }
+      ]
+    },
+
+
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b(?:0[xX][0-9A-Fa-f]+|\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)\\b",
+          "name": "constant.numeric.ps"
+        }
+      ]
+    },
+
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(class|func|if|else|elif|while|for|return|break|continue|import|from|as|try|catch|finally|super|in|switch|case|default)\\b",
+          "name": "keyword.control.ps"
+        }
+      ]
+    },
+
+
+    "constants": {
+      "patterns": [
+        {
+          "match": "\\b(true|false|null)\\b",
+          "name": "constant.language.ps"
+        }
+      ]
+    },
+
+
+    "operators": {
+      "patterns": [
+        {
+          "match": "\\+|\\-|\\*|/|%|==|!=|>=|<=|>|<|=|&&|\\|\\||!",
+          "name": "keyword.operator.ps"
+        }
+      ]
+    },
+
+
+    "imports": {
+      "patterns": [
+
+        {
+          "begin": "\\b(import)\\s*(?=\\()",
+          "end": "\\)",
+          "name": "meta.import.ps",
+
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.import.ps"
+            }
+          },
+
+          "patterns": [
+
+            {
+              "match": "\\b(as)\\b",
+              "name": "keyword.control.import.ps"
+            },
+
+            {
+              "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
+              "name": "entity.name.namespace.ps"
+            },
+
+            {
+              "match": ",",
+              "name": "punctuation.separator.import.ps"
+            },
+
+            {
+              "match": "\\(|\\)",
+              "name": "punctuation.definition.import.ps"
+            }
+          ]
+        }
+      ]
+    },
+
+
+    "builtins": {
+      "patterns": [
+
+        {
+          "match": "\\b(Write|Press|Sleep|Click|Set_Interval|Hot_Key|Double_Click|Move_Rel|Move_To_Img|Key_Down|Key_Up|Type_Write)\\b",
+          "name": "support.function.ps"
+        },
+
+
+        {
+          "match": "\\b(FIND_TEXT|CLICK_TEXT|WAIT_TEXT|FIND_IMG|FIND_CLICK|CLICK_IMG|SMART_FIND|WAIT_IMG|CLICK|SMART_CLICK|PRINTL|INPUTL|WRITEL)(?=\\s*\\()",
+          "name": "entity.name.function.ps"
+        },
+
+
+        {
+          "match": "(?<!\\.)(?<![A-Za-z0-9_])(FIND_TEXT|CLICK_TEXT|WAIT_TEXT|FIND_IMG|FIND_CLICK|CLICK_IMG|SMART_FIND|WAIT_IMG|CLICK|SMART_CLICK|PRINTL|INPUTL|WRITEL)\\b",
+          "name": "support.type.ps"
+        },
+
+
+        {
+          "match": "\\b(printl|inputl|writel|len|range|int|float|split|error|ask_option)\\b",
+          "name": "support.function.ps"
+        },
+        {
+          "match": "\\b(Find_Text|Click_Text|Wait_Text|Find_Img|Click_Img|Smart_Find|Smart_Click|Wait_Img)\\b",
+          "name": "support.function.ps"
+        },
+        {
+          "match": "\\b(set|list|dict|tuple)\\b",
+          "name": "support.type.ps"
+        },
+
+
+        {
+          "match": "\\b(ocr|cv2|std|cre)\\b",
+          "name": "storage.type.ps"
+        },
+
+
+        {
+          "match": "\\b(show|print|input|OCR)\\b",
+          "name": "support.type.ps"
+        }
+      ]
+    },
+
+
+    "members": {
+      "patterns": [
+        {
+          "match": "\\.",
+          "name": "punctuation.accessor.ps"
+        }
+      ]
+    }
+  }
+}

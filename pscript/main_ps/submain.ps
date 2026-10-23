@@ -1,0 +1,197 @@
+func _std() {
+    import std
+    std.printl()
+}
+
+func _cv2():
+    from cv2 import FIND_IMG,CLICK_IMG
+    FIND_IMG("go_live.png")
+
+func _cv20{
+    import cv2 as c
+    c.CLICK_IMG ("go_live.png")
+}
+
+func positive_negative_number ():
+    a = 6
+    msg = a % 2 == 0 ? "Số dương" : "Số âm"
+    printl("${msg}","C") 
+
+
+func walrus (){
+    printl("walrus:=",x:=20,"Y")
+} 
+
+func add_multi(a, b,isadd = true) {
+
+    multi = (a,b,*args) => a * b
+    
+    if isadd:
+        return a + b
+    else:
+        kq = multi(a,b,isadd)
+        return kq
+}
+
+/* printl(add_multi(2,4)) */
+
+
+func if_else_loop():
+    
+    x = 1
+
+    if x==1 {
+        Set_Interval( 0.2)
+        Hot_Key ("win","r")
+        Write ("notepad")
+        Press ("enter")
+        Write "abcdefghiklmn"
+    }
+    elif x==3 {
+        Set_Interval 0.2
+        Hot_Key "win","r"
+        Write ("notepad")
+        Press ("enter")
+        Write "nghrdttu" 
+    }
+    else {
+        Set_Interval 0.2
+        Hot_Key ("win","r")
+        Write ("notepad")
+        Press ("enter")
+        Write "ABCDEF"
+    }
+
+func while_loop(a=0){
+    while a < 10 {
+        a = a+1   
+        printl(a,"C")    
+    }
+} 
+
+
+/* printl("Tổng =",add(1,4),"C")
+for i in 1..8 {
+    if i < 6{
+        printl(i,"G")
+    }
+} */
+
+/* a = [10,20,30,40,50]
+
+printl(a[:2])      // [10,20]
+printl(a[2:])      // [30,40,50]
+printl(a[:])       // [10,20,30,40,50]
+printl(a[1:4])     // [20,30,40]
+printl(a[::2])     // [10,30,50]
+printl(a[1::2])    // [20,40]
+printl(a[:4:2])    // [10,30]
+printl(a[1:4:2])   // [20,40] */
+
+/* user = {
+
+    "name":"Tom",
+
+    "scores":[10,20,30],
+
+    "address":{
+
+        "city":"HCM",
+
+        "zip":700000
+
+    }
+
+}
+Writel(user,"M")
+x = null
+printl(x)
+for i in range(1,7){
+    for j in (1..7){
+        printl (i ,j)
+    }
+    
+}
+
+visited = set()
+
+for i in 1..10 {
+    visited.add(i)
+}
+
+printl(visited)
+
+a = [1, 2, 3] */
+
+/* push(a, 99)
+
+printl(a,"B")
+
+b = [1,2,3]
+printl(b)
+x = pop(b)
+
+printl(x)
+printl(b)
+
+s = Stack()
+
+s.push(10)
+s.push(20)
+
+printl((s)) 
+ 
+for i in 1..10 {
+    printl("i = ",i,"C")
+}
+
+func Clear_RunHistory() {
+    key = '"HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU"'
+    r_item = "Remove-Item "
+    force = " \-Recurse \-Force"
+    Set_Interval 0.02
+    Hot_Key ("win", "r")
+    Write ("pwsh")
+    Press("enter")
+    Write (r_item)
+    Write (key)
+    Write (force)
+    Press("enter")
+}
+
+
+func open_pwsh (){
+    Hot_Key ("win", "r")
+    Write ("pwsh")
+}
+func enter(){
+    Press "enter"
+}
+func cls (){
+    Set_Interval 0.2
+    Write "cls"
+    Press "enter"
+} */
+/* func run_Clear_RunHistory(ok = true):
+    if !ok:
+        open_pwsh() 
+        enter()
+        
+        cls()
+    
+    else:
+        open_pwsh() */
+    
+/* run_Clear_RunHistory(ok = false) */
+
+
+func make():
+    x=10
+    return ()=>{
+        printl("Hello","R")
+        return x
+    }
+
+make()
+
+

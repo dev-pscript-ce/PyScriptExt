@@ -1226,6 +1226,3 @@ def banner(
         (title, color_title),
         (char * right, color_char),
     )
-
-
-printl.R.b.i.u("Text")
